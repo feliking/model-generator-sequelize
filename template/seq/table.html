@@ -1,0 +1,20 @@
+{% autoescape false %}
+
+module.exports = (sequelize, DataTypes) => {
+    let fields = {
+			{% for column in table.columns %}
+				{% include "./column.html" %}{% if not loop.last %},{% endif %}
+			{% endfor %}
+    }
+    fields = util.setTimestamps(fields);
+
+    let {{table.modelName}}= sequelize.define("{{ table.tableName }}", fields, {
+			timestamps: false,
+			tableName: "{{ table.tableName }}",
+			schema: "{{ table.schema }}",
+		});
+	
+		return {{table.modelName}};
+};
+
+{% endautoescape %}

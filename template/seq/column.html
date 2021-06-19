@@ -1,0 +1,20 @@
+{% autoescape false %}
+
+{{ column.accessorName }}: {
+    type: {{ column.type }},
+    allowNull: {{ column.allowNull }},
+    xlabel: lang.t("{{"fields."+column.accessorName}}")
+    {{ ifTrue('field', column.name) }}
+    {{ ifTrue('primaryKey', column.primaryKey) }}
+    {{ ifTrue('autoIncrement', column.autoIncrement) }}
+    {{ ifFalse('allowNull', column.allowNull) }}
+    {{ ifNotUndefined('defaultValue', column.defaultValue) }}
+    {{ ifTrue('unique', column.unique) }}
+    {{ ifTrue('comment', column.comment) }}
+    {{ ifTrue('references', column.references) }}
+    {{ ifTrue('referencesKey', column.referencesKey) }}
+    {{ ifTrue('onUpdate', column.onUpdate) }}
+    {{ ifTrue('onDelete', column.onDelete) }}
+}
+
+{% endautoescape %}
