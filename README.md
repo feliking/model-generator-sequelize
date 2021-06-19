@@ -27,6 +27,12 @@ Usage
 
 ### Step 1: Install globally via npm -g
 
+Configure script package.json
+
+    $ node sequelize-pg-generator/lib/bin/spgen.js -d database -u user -p password -t seq
+
+### Step 1: Install globally via npm -g
+
 This will install module and CLI command
 
     $ npm install -g sequelize-pg-generator
