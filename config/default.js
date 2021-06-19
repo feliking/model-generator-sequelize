@@ -20,7 +20,7 @@ module.exports = {
         },
         "output": {
             "log": true,
-            "folder": "../../../src/infraestructure/model",
+            "folder": "./src/infraestructure/model",
             "beautify": true,
             "indent": 2,
             "preserveNewLines": false,
